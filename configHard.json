@@ -1,0 +1,87 @@
+{
+    "rooms": [
+        {
+            "id": "normal1",
+            "type": "normal",
+            "height": 29,
+            "width": 29,
+            "portals": ["normal1_entrance", "normal1_exit", "normal1_task1"]
+        }, {
+            "id": "task1",
+            "type": "task",
+            "height": 29,
+            "width": 29,
+            "portals": ["task1_exit"],
+            "required_exp": 3,
+            "tasks": ["question1", "question4"]
+        }, {
+            "id": "normal2",
+            "type": "normal",
+            "height": 29,
+            "width": 29,
+            "portals": ["normal2_entrance", "normal2_exit","normal2_task2"]
+        },{
+            "id": "task2",
+            "type": "task",
+            "height": 29,
+            "width": 29,
+            "portals": ["task2_exit"],
+            "required_exp": 7,
+            "tasks": ["question5", "question2","question3","question6"]
+        },{
+            "id": "normal3",
+            "type": "normal",
+            "height": 29,
+            "width": 29,
+            "portals": ["normal3_entrance", "normal3_exit"]
+        }
+    ],
+    "portals": [
+        {"id": "normal1_entrance", "destination": ""},
+        {"id": "normal1_exit", "destination": "normal2_entrance"},
+        {"id": "normal1_task1", "destination": "task1_exit"},
+        {"id": "task1_exit", "destination": "normal1_task1"},
+        {"id": "normal2_entrance", "destination": ""},
+        {"id": "normal2_exit", "destination": "normal3_entrance"},
+        {"id": "normal2_task2", "destination": "task2_exit"},
+        {"id": "task2_exit", "destination": "normal2_task2"},
+        {"id": "normal3_entrance", "destination": ""},
+        {"id": "normal3_exit", "destination": ""}
+    ],
+    "start": "normal1_entrance",
+    "end": "normal3_exit",
+    "tasks": [
+        {
+            "id": "question1",
+            "type": "blank_filling",
+            "exp": 1,
+            "question": "",
+            "answer": ""
+        }, {
+            "id": "question2",
+            "type": "multiple_choice",
+            "exp": 2,
+            "question": "",
+            "choices": [],
+            "answer": ""
+        },{
+            "id": "question3",
+            "type": "wu_zi_qi",
+            "exp": 2
+        },{
+            "id": "question4",
+            "type": "keys",
+            "exp": 2
+        }, {
+            "id": "question5",
+            "type": "blank_filling",
+            "exp": 1,
+            "question": "",
+            "answer": ""
+        },{
+            "id": "question6",
+            "type": "treasure",
+            "exp": 2
+        }
+    ]
+}
